@@ -28,7 +28,8 @@ import io.paperdb.Paper;
 
 public class VolunteerRegisterActivity extends AppCompatActivity {
     EditText et_name_volunteer_register, et_location_volunteer_register,et_email_volunteer_register,et_phno_volunteer_register,
-            et_password_volunteer_register,et_age_volunteer_register;
+            et_password_volunteer_register,et_age_volunteer_register,et_gender_volunteer_register,et_bgroup_volunteer_register,et_vwork_volunteer_register,et_pastexp_volunteer_register;
+
     Button btn_login_volunteer_register,btn_volunteer_register;
 
     ProgressBar pb_volunteer_register;
@@ -47,6 +48,10 @@ public class VolunteerRegisterActivity extends AppCompatActivity {
         et_phno_volunteer_register = findViewById(R.id.et_phno_volunteer_register);
         et_password_volunteer_register = findViewById(R.id.et_password_volunteer_register);
         et_age_volunteer_register=findViewById(R.id.et_age_volunteer_register);
+        et_gender_volunteer_register=findViewById(R.id.et_gender_volunteer_register);
+        et_bgroup_volunteer_register=findViewById(R.id.et_bgroup_volunteer_register);
+        et_vwork_volunteer_register=findViewById(R.id.et_vwork_volunteer_register);
+        et_pastexp_volunteer_register=findViewById(R.id.et_pastexp_volunteer_register);
         btn_login_volunteer_register = findViewById(R.id.btn_login_volunteer_register) ;
         btn_volunteer_register = findViewById(R.id.btn_volunteer_register) ;
         pb_volunteer_register = findViewById(R.id.pb_volunteer_register);
@@ -60,6 +65,10 @@ public class VolunteerRegisterActivity extends AppCompatActivity {
                 String phno = et_phno_volunteer_register.getText().toString().trim();
                 String password = et_password_volunteer_register.getText().toString().trim();
                 String age1 = et_age_volunteer_register.getText().toString().trim();
+                String gender=et_gender_volunteer_register.getText().toString().trim();
+                String bgroup=et_bgroup_volunteer_register.getText().toString().trim();
+                String vwork=et_vwork_volunteer_register.getText().toString().trim();
+                String pastexp=et_pastexp_volunteer_register.getText().toString().trim();
                 int age = Integer.parseInt(age1);
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
@@ -90,12 +99,12 @@ public class VolunteerRegisterActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (age < 18 || age > 60) {
-                    Toast.makeText(getApplicationContext(), "Age not within range! Only 18-60 years volunteers allowed!", Toast.LENGTH_SHORT).show();
+                if (age < 1 || age > 4) {
+                    Toast.makeText(getApplicationContext(), "Age not within range! Only age group 1-4 volunteers allowed!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                addVolunteer(name,location,email,phno,password,String.valueOf(age));
+                addVolunteer(name,location,email,phno,password,String.valueOf(age),gender,bgroup,vwork,pastexp);
             }
 
         });
@@ -108,7 +117,7 @@ public class VolunteerRegisterActivity extends AppCompatActivity {
         });
     }
 
-    private void addVolunteer(final String name, final String location, final String email, final String phno, final String password,final String age) {
+    private void addVolunteer(final String name, final String location, final String email, final String phno, final String password,final String age, final String gender, final String bgroup, final String vwork, final String pastexp) {
 
         final DatabaseReference mRef = FirebaseDatabase.getInstance().getReference("Volunteers").child("no");
         reference2 = FirebaseDatabase.getInstance().getReference("Volunteers").child("users");
@@ -118,7 +127,7 @@ public class VolunteerRegisterActivity extends AppCompatActivity {
                 Double no = dataSnapshot.getValue(Double.class);
                 no = no+1;
                 String id = "Volunteer"+no.intValue();
-                Volunteer ngo= new Volunteer(id,name,email,password,phno,location,age);
+                Volunteer ngo= new Volunteer(id,name,email,password,phno,location,age,gender,bgroup,vwork,pastexp);
                 reference2.child(id).setValue(ngo);
                 mRef.setValue(no.intValue());
 

@@ -6,14 +6,19 @@ public class Volunteer {
     String name;
     String email;
     String password;
-    String  phoneNo;
-    String  location;
+    String phoneNo;
+    String location;
     String age;
+    String gender;
+    String bgroup;
+    String vwork;
+    String pastexp;
+
 
     public Volunteer() {
     }
 
-    public Volunteer(String id, String name, String email, String password, String phoneNo, String location, String age) {
+    public Volunteer(String id, String name, String email, String password, String phoneNo, String location, String age, String gender, String bgroup, String vwork, String pastexp) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -21,6 +26,10 @@ public class Volunteer {
         this.phoneNo = phoneNo;
         this.location = location;
         this.age = age;
+        this.gender = gender;
+        this.bgroup = bgroup;
+        this.vwork = vwork;
+        this.pastexp = pastexp;
     }
 
     public String getAge() {
@@ -78,4 +87,37 @@ public class Volunteer {
     public void setLocation(String location) {
         this.location = location;
     }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getBgroup() {
+        return bgroup;
+    }
+
+    public void setBgroup(String bgroup) {
+        this.bgroup = bgroup;
+    }
+
+    public String getVwork() {
+        return vwork;
+    }
+
+    public void setVwork(String vwork) {
+        this.vwork = vwork;
+    }
+
+    public String getPastexp() {
+        return pastexp;
+    }
+
+    public void setPastexp(String pastexp) {
+        this.pastexp = pastexp;
+    }
 }
+

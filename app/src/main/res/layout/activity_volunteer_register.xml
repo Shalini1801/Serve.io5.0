@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="37dp"
         android:gravity="center_horizontal"
         android:text="Volunteer Registration"
         android:textColor="#000000"
@@ -24,7 +24,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="30dp"
         android:textColor="#000000"
         android:hint="Your name"
         android:inputType="text"
@@ -39,7 +39,7 @@
         android:layout_marginTop="0dp"
         android:inputType="number"
         android:textColor="#000000"
-        android:hint="Your age"
+        android:hint="Your age-group"
         android:textColorHint="#9595b7"
         android:textSize="15sp"
         />
@@ -64,6 +64,50 @@
         android:hint="Your Phone number"
         android:textColor="#000000"
         android:inputType="phone"
+        android:textColorHint="#9595b7"
+        android:textSize="15sp" />
+    <EditText
+        android:id="@+id/et_gender_volunteer_register"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="0dp"
+        android:hint="Your Gender(F/M)"
+        android:textColor="#000000"
+        android:inputType="text"
+        android:textColorHint="#9595b7"
+        android:textSize="15sp" />
+    <EditText
+        android:id="@+id/et_bgroup_volunteer_register"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="0dp"
+        android:hint="Your Blood Group"
+        android:textColor="#000000"
+        android:inputType="text"
+        android:textColorHint="#9595b7"
+        android:textSize="15sp" />
+    <EditText
+        android:id="@+id/et_vwork_volunteer_register"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="0dp"
+        android:hint="What work you're interested in?"
+        android:textColor="#000000"
+        android:inputType="text"
+        android:textColorHint="#9595b7"
+        android:textSize="15sp" />
+    <EditText
+        android:id="@+id/et_pastexp_volunteer_register"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="0dp"
+        android:hint="Past Experience(1 for yes, 0 for no)"
+        android:textColor="#000000"
+        android:inputType="text"
         android:textColorHint="#9595b7"
         android:textSize="15sp" />
     <EditText
@@ -98,7 +142,7 @@
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="40dp"
         android:text="register"
 
         android:textSize="15sp"
